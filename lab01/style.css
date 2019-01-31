@@ -1,0 +1,104 @@
+@font-face{
+   font-family: Font; 
+   src: url(Font.otf);
+
+}
+*{
+	box-sizing: border-box;
+}
+body {
+	background-color: black;
+ 	font-family: Font;
+ 	font-size: 30px;
+}
+
+h1, h2{
+	text-align: center;
+}
+h1 ,h3{
+	text-decoration: underline;
+}
+#zen-intro{
+  	overflow: auto;  	
+  	background: url("fire2.png") no-repeat right top -20px, url("fire1.png") no-repeat left bottom 75px;
+  	background-size: 40% 40%;
+}
+header{
+	float: left;
+	width: 50%;
+}
+#zen-summary, #zen-preamble, #zen-explanation, #zen-participation, #zen-benefits, #zen-requirements, footer {
+  	background-image: url("BG0.png");
+  	background-repeat: no-repeat;
+  	background-size: 100% 100%;
+}
+#zen-summary, #zen-preamble{
+	width: 50%;
+  	text-indent: 30px;
+}
+#zen-summary{
+	float: none;
+  	font-size: 25px;
+  	padding: 20px;
+}
+h1{
+	text-shadow: 3px 2px orange;
+}
+#zen-preamble{
+	float: right;
+  	padding: 25px;
+}
+#zen-supporting{
+	width: 80%;
+  	float: left;
+  	overflow: auto;
+  	margin-top: 10px;
+  	background: url("fire0.png") no-repeat;
+  	background-position: 395px 670px;
+  	background-size: 16% 13%;
+}
+#zen-explanation, #zen-participation{
+	width: 49%;
+  	padding: 25px;
+  	text-indent: 30px;
+}
+#zen-explanation{
+	float: left;
+}
+#zen-participation{ 
+	float: right;
+  	margin-right: 10px;
+}
+#zen-benefits, #zen-requirements{
+  	padding: 25px;
+  	text-indent: 30px;
+  	margin-top: 10px;
+}
+#zen-benefits{
+	width: 39%;
+	float: left;
+}
+#zen-requirements{
+	width: 60%;
+	float: right;
+  	margin-right: 5px;
+}
+footer{
+	width: 38%;
+	float: left;
+	margin-top: 20px;
+	padding: 20px;
+	text-align: center;
+	word-spacing: 1000px;
+	line-height: 1.5;
+}	
+.sidebar{
+	float: right;
+	width: 20%;
+	background-image: url("BG0.png");
+	background-position: center;
+	background-size: cover;
+  	background-repeat: no-repeat;
+  	padding: 10px 15px 35px;
+  	margin-top: 10px;
+}
