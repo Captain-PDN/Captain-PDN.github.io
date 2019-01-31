@@ -20,7 +20,7 @@ h1 ,h3{
 }
 #zen-intro{
   	overflow: auto;  	
-  	background: url("fire2.png") no-repeat right top -20px, url("fire1.png") no-repeat left bottom 75px;
+  	background: url("Fire2.png") no-repeat right top -20px, url("Fire1.png") no-repeat left bottom 75px;
   	background-size: 40% 40%;
 }
 header{
@@ -53,7 +53,7 @@ h1{
   	float: left;
   	overflow: auto;
   	margin-top: 10px;
-  	background: url("fire0.png") no-repeat;
+  	background: url("Fire0.png") no-repeat;
   	background-position: 395px 670px;
   	background-size: 16% 13%;
 }
