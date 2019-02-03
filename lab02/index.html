@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS Specificity</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="Style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="round-border">
+			<h1>CSS Specificity คืออะไร ??</h1>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row no-gutters" >
+    		<div class="col-6 round-border">
+    			<h3>Specificity คืออะไร</h3>
+    			<pre>
+    Specificity เปรียบเหมือนคะแนน ที่บ่งบอกระดับความสำคัญของ CSS rules ใดๆ
+    เมื่อ elements ใดๆ มีการนิยาม CSS rules ตั้งแต่ 2 กฎขึ้นไป เบราว์เซอร์
+    จะทำการกำหนด rule ที่มีค่า Specificity สูงที่สุด ให้กับ elements นั้นๆ
+    เพื่อนำขึ้นมาแสดง
+    			</pre>
+   			</div>
+    		<div class="col-6 round-border">
+      			<h3>ลำดับของ Specificity</h3>
+      			<pre>
+    องค์ประกอบที่มีผลต่อลำดับชั้นของ Specificity มี 4 อย่างดังนี้</pre>
+      			<ul>
+      				<li>
+      					Inline Styles : การนิยาม style ให้กับ element ใดๆ ในรูปแบบของ attribute ของ element นั้นๆ
+      				</li>
+      				<li>
+      					ID : เป็น selector ที่จะมีได้เพียง 1 เดียว ภายในหน้าๆหนึ่ง
+      				</li>
+      				<li>
+      					Classes : เป็น selector ที่สามารถนิยาม rule ให้กลับหลายๆ element ได้
+      				</li>
+      				<li>
+      					Elements : เป็น selector ที่อ้างอิงตาม tags name
+      				</li>
+
+      			</ul>
+    		</div>
+    		<div class="col-12 round-border">
+    			<h3>การคำนวณค่า Specificity</h3>
+    			<pre>
+    ค่า Specificity จะเริ่มต้นที่ 0 และจะบวกเพิ่มขึ้น 1000 สำหรับ inline styles, บวก 100 สำหรับ ID, บวก 10 สำหรับ classes และบวก 1 สำหรับ element name
+    			</pre>
+    			<div class="col-12 dash-border">
+    				<h5>ตัวอย่างการคำนวณค่า Specificity</h5>
+    				<pre>
+    	1:	li.active {
+    			color: gold;
+    		}
+
+    	2:	li {
+    			text-decoration: none;
+    			color: red;
+    		}
+
+    	ค่า Specificity ของ rule ที่ 1 คือ 101 ( 1 (element) + 100 (ID) )
+    	ค่า Specificity ของ rule ที่ 2 คือ 1 ( 1 (element))
+
+    	เมื่อได้ค่า Specificity ที่สูงที่สุด เบราว์เซอร์จะให้ความสำคัญกับ rule นั้นๆก่อน ทำให้คำว่า INDEX มีตัวอักษรสีทอง และคำว่า HOME มีตัวอักษรสีแดง
+    	ที่หน้า index.htmlเช่นเดียวกัน คำว่า HOME มีตัวอักษรสีทอง และคำว่า INDEX มีตัวอักษรสีแดง ที่หน้า home.html
+    	ทั้งนี้ขึ้นอยู่กับกฎของ Specificity ด้วย
+    				</pre>
+    			</div>
+    		</div>
+    		<div class="col-12 round-border">
+    			<h3>กฎของ Specificity</h3>
+    			<pre>
+    กฎต่อไปนี้ เป็นกฎที่ช่วยในการคำนวณค่า Specificity และนำมาแสดงผลได้อย่างถูกต้อง	
+    			</pre>
+    			<div class="row no-gutters">
+    				<div class="col-6 dash-border">
+    					<h5>(1) เมื่อมีค่า Specificity เท่ากัน กฎที่นิยามทีหลัง จะถูกนำมาแสดง</h5>
+    					<pre>
+    ถ้ามีการนิยาม rule ใดๆที่ เมื่อคำนวณค่า Specificity แล้วได้ค่าที่เท่ากัน
+    rule ที่นิยามทีหลัง จะถูกนำขึ้นมาแสดง
+
+    ตัวอย่าง
+    1:	li.active {
+    		background-color: transparent;
+    	}
+    จาก Style-2.css
+
+    2:	li.active {
+    		background-color: green;
+    	}
+    จาก Style-1.css
+
+    ผลลัพธ์ที่ได้ในหน้า home.html คือ rule ที่ 2 (พื้นหลังสีเขียว)
+    เนื่องจาก home.html link Style-1.css ทีหลัง
+
+    					</pre>
+    				</div>
+    				<div class="col-6 dash-border">
+    					<h5>(2) ID selectors มีค่า specificity มากกว่า attribute selectors</h5>
+    					<pre>
+    ดังตัวอย่างต่อไปนี้
+
+    1 :	div#a {background-color: green;}
+
+    2 : #a {background-color: yellow;}
+
+    3 : div[id=a] {background-color: blue;}
+
+    rule ที่ 1 จะมีค่า Specificity มากกว่า rule ที่ 3
+    ทำให้แสดงผลลัพธ์เป็นพื้นหลังสีเขียว
+
+    (ตัวอย่างจาก https://www.w3schools.com/css/css_specificity.asp)
+    					</pre>
+    				</div>
+    				<div class="col-6 dash-border">
+    					<h5>(3) Contextual selectors มีค่า Specificity มากกว่า element selector</h5>
+    					<pre>
+    rule ของ style sheet ที่อยู่ใกล้กลับส่วนที่ใช้งานมากกว่า
+    จะถูกนำมาแสดงผล
+    ดังตัวอย่าง
+
+    จากไฟล์ CSS ภายนอก:
+    	h1 {background-color: red;}
+
+    ภายในไฟล์ HTML:
+    	&lt;style&gt;
+    		h1 {background-color: yellow;}
+    	&lt;/style&gt;
+
+    ดังนั้น rule ที่อยุ่ภายในไฟล์ HTML จะถูกนำมาแสดง
+
+    (ตัวอย่างจาก https://www.w3schools.com/css/css_specificity.asp)
+    					</pre>
+    				</div>
+    				<div class="col-6 dash-border">
+    					<h5>(4) Class selector มีค่า Specificity มากกว่า element selectors</h5>
+    					<pre>
+    ดังตัวอย่างต่อไปนี้
+
+    1 : .intro{background-color: yellow;}
+
+    2 : h1{background-color: red;}
+
+    หากใช้ &lt;h1 class="intro"&gt;
+    เบราว์เซอร์จะเลือก rule 1 มาแสดงผล
+
+    (ตัวอย่างจาก https://www.w3schools.com/css/css_specificity.asp)
+    					</pre>
+    				</div>
+    				<div class="col-12 dash-border">
+    					<h5>(5) Universal selector และ inherited values มีค่า Specificity เป็น 0 </h5>
+    					<pre>
+    Universal selector เช่น *, body * จะมีค่า Specificity เป็น 0 และจะถูกนำมาแสดงผลก็ต่อเมื่อ ไม่มี rule ใดๆที่อ้างอิงถึงส่วนๆนี้
+    					</pre>
+    				</div>
+    			</div>
+    		</div>
+  		</div>
+	</div>
+</body>
+</html>
