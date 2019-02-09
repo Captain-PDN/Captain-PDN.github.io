@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ROM monster data</title>
+    <link rel="stylesheet" href="bulma-0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="section hero is-fullheight">
+        <div class="container">
+            <div class="level">
+                <div class="level-item">
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="control">
+                                <button id="show-advance-search-btn" class="button is-primary is-rounded">
+                                    Advance search : off
+                                </button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="level">
+                <div class="level-item" id="standard">
+                    <div class="field is-horizontal">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label" for="input-text">Text: </label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                <p class="control">
+                                    <input  class="input is-rounded" 
+                                            type="text" id="input-text"
+                                            placeholder="Enter some text">
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label" for="input-text">search by: </label>      
+                            </div>
+                            <div class="control ">
+                                <div class="select is-rounded">
+                                    <select id="select">
+                                        <option>Name</option>
+                                        <option>Size</option>
+                                        <option>Element</option>
+                                        <option>Race</option>
+                                        <option>Boss</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="control">
+                                <button id="search-btn" class="button is-primary is-rounded">
+                                    search
+                                </button>
+                            </div>                   
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-item" id="advance">
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label" for="input-text">Name: </label>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <p class="control">
+                                <input  class="input is-rounded" 
+                                        type="text" id="input-text-advance"
+                                        placeholder="Enter some text">
+                            </p>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label" for="input-text">Size: </label>      
+                            </div>
+                            <div class="control ">
+                                <div class="select is-rounded">
+                                    <select id="advance-size">
+                                        <option>All</option>
+                                        <option>Small</option>
+                                        <option>Medium</option>
+                                        <option>Large</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label" for="input-text">Element: </label>      
+                            </div>
+                            <div class="control ">
+                                <div class="select is-rounded">
+                                    <select id="advance-element">
+                                        <option>All</option>
+                                        <option>Wind</option>
+                                        <option>Earth</option>
+                                        <option>Water</option>
+                                        <option>Fire</option>
+                                        <option>Neutral</option>
+                                        <option>Holy</option>
+                                        <option>Shadow</option>
+                                        <option>Ghost</option>
+                                        <option>Undead</option>
+                                        <option>Poison</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label" for="input-text">Race: </label>      
+                            </div>
+                            <div class="control ">
+                                <div class="select is-rounded">
+                                    <select id="advance-race">
+                                        <option>All</option>
+                                        <option>Plant</option>
+                                        <option>Brute</option>
+                                        <option>Insect</option>
+                                        <option>Fish</option>
+                                        <option>Demon</option>
+                                        <option>Undead</option>
+                                        <option>Demi Human</option>
+                                        <option>Formless</option>
+                                        <option>Dragon</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="control">
+                                <button id="advance-search-btn" class="button is-primary is-rounded">
+                                    Advance Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="level" id="search-intro">
+                <div class="level-item">
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <aside class="menu">
+                                <p class="menu-label">
+                                    Available search text :
+                                </p>
+                                <ul class="menu-list">
+                                    <li><a>Size { Small, Medium, Large }</a></li>
+                                    <li><a>Element { Wind, Earth, Water, Fire, Neutral, Holy, Shadow, Ghost, Undead, Poison }</a></li>
+                                    <li><a>Race { Plant, Brute, Insect, Fish, Demon, Undead, Demi Human, Formless, Dragon }</a></li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="level">
+                <div class="level-item">
+                    <table class="table">
+                        <thead>
+                            <tr> 
+                                <th>Name</th>
+                                <th>Level</th>
+                                <th>Size</abbr></th>
+                                <th>Element</abbr></th>
+                                <th>Race</abbr></th>
+                                <th>HP</abbr></th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="level">
+                <div class="level-item">
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <label class="label" id="referance">
+                                Data from : <a target="_blank" href="http://gamefever.co/2018/11/15/ragnarok-m-ข้อมูลมอนสเตอร์/">http://gamefever.co/2018/11/15/ragnarok-m-ข้อมูลมอนสเตอร์/</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="myscript.js"></script>
+</body>
+</html>
